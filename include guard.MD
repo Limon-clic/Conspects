@@ -7,12 +7,15 @@
  };
 Файл father.h
  #include "grandfather.h"
+ 
 Файл child.c
  #include "grandfather.h"
  #include "father.h"
 Здесь к файлу «child.c» напрямую подключаются две копии заголовочного файла «grandfather.h». Это может вызвать ошибку компиляции, так как структура типа foo явным образом определяется дважды.
+
 Применение #include guards
 Файл grandfather.h
+ #pragma once
  #ifndef H_GRANDFATHER
  #define H_GRANDFATHER
 
